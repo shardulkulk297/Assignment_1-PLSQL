@@ -36,7 +36,7 @@ BEGIN
     Declare total_rows int default 0;
     Declare ids int;
     
-	Select Count(id) into total_rows from Book;
+	Select Count(id) into total_rows from Book WHERE publication_house = publicationHouse;
     
     WHILE i<=total_rows DO
 		Select id into ids from Book WHERE publication_house = publicationHouse LIMIT i,1;
@@ -57,7 +57,7 @@ BEGIN
     Declare total_rows int default 0;
     Declare ids int;
     
-    Select count(id) into total_rows from Book;
+    Select count(id) into total_rows from Book WHERE category = categ;
     
 	WHILE i<=total_rows DO
 		Select id into ids from Book WHERE category = categ LIMIT i,1;
