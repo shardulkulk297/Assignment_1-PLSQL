@@ -7,10 +7,7 @@ const UserLayout = () => {
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary">
                 <div className="container-fluid">
-                    <span className="navbar-brand"><strong>User Management Portal</strong></span>
-                    <div className="d-flex ms-auto">
-                        <button onClick={()=> navigate("/add-user")} className="btn btn-primary" type="button">Add User</button>
-                    </div>
+                    <span className="navbar-brand text-center"><strong>User Management Portal</strong></span>
                 </div>
             </nav>
 

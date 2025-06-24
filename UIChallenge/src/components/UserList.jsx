@@ -29,6 +29,12 @@ const UserList = () => {
     }, [])
 
     const handleDelete = async (userId) => {
+        const answer = window.confirm("Do you really want to delete this user?");
+
+        if (!answer) {
+            return;
+        }
+
         const token = "1a95423a657068aba778bbc19a466daa909297d5ddd26ab67ab99fe8dc701d73"
         try {
             await axios.delete(`https://gorest.co.in/public/v2/users/${userId}`, {
@@ -86,20 +92,19 @@ const UserList = () => {
             const token = "1a95423a657068aba778bbc19a466daa909297d5ddd26ab67ab99fe8dc701d73";
             const response = await axios.post("https://gorest.co.in/public/v2/users", {
                 "name": name,
-                "email": email + Date.now() + "@test.com",
+                "email": email,
                 "gender": gender,
                 "status": status
             }, {
                 headers: { Authorization: "Bearer " + token }
             })
             console.log(response.data);
+            setUsers((user)=> [...user, response.data])
             toast.success("User Added Successfully!!")
         } catch (error) {
             console.log(error.message)
             toast.error("Error Adding User");
-
         }
-
     }
 
 
