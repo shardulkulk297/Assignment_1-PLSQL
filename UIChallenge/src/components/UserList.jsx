@@ -218,6 +218,7 @@ const UserList = () => {
                                             </div>
                                             <div className='m-5 justify-content-center'>
                                                 <button type='button' onClick={(e) => handleUpdate(e, editingUser.id)} className='btn btn-primary' >Update</button>
+                                                 <button onClick={()=>setEditingUser(null)} className='btn btn-primary m-2'>Cancel</button>
                                             </div>
                                         </div>
                                     </div>
@@ -279,16 +280,17 @@ const UserList = () => {
                                                     required
                                                     onChange={(e) => setGender(e.target.value)}
                                                     value={gender}
-
                                                 >
                                                     <option value="">— Select gender —</option>
                                                     <option value="male">Male</option>
                                                     <option value="female">Female</option>
                                                 </select>
                                             </div>
-                                            <div className='m-5 justify-content-center'>
-                                                <button type='button' onClick={(e) => postUser(e)} className='btn btn-primary' >Add User</button>
+                                            <div className='m-1 justify-content-center'>
+                                                <button type='button' onClick={(e) => postUser(e)} className='btn btn-primary m-1' >Add User</button>
+                                                  <button onClick={()=>setAddUser(false)} className='btn btn-primary m-2'>Cancel</button>
                                             </div>
+                                            
                                         </div>
                                     </div>
 
